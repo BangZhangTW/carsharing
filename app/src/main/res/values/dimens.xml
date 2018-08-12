@@ -1,0 +1,26 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="margin_on_both_sides">15dp</dimen>
+    <dimen name="main_tab_bar_height">48dp</dimen>
+    <dimen name="tool_bar_height">48dp</dimen>
+    <dimen name="table_layout_height">32dp</dimen>
+
+    <dimen name="font_xxxxxxx_large">50px</dimen>
+    <dimen name="font_xxxxxs_large">46px</dimen>
+    <dimen name="font_xxxxxx_large">40px</dimen>
+    <dimen name="font_xxxxx_large">30px</dimen>
+    <dimen name="font_xxxx_large">20px</dimen>
+    <dimen name="font_xxx_large">19px</dimen>
+    <dimen name="font_xx_large">18px</dimen>
+    <dimen name="font_x_large">16px</dimen>
+    <dimen name="font_large">14px</dimen>
+    <dimen name="font_medium">13px</dimen>
+    <dimen name="font_small">12px</dimen>
+    <dimen name="font_x_small">11px</dimen>
+    <dimen name="font_xs_small">10px</dimen>
+    <dimen name="font_xx_small">9px</dimen>
+    <dimen name="font_xxx_small">7px</dimen>
+    <dimen name="font_xxxx_small">6px</dimen>
+
+    <dimen name="font_title">16px</dimen>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="original_black">#000000</color>
+    <color name="dark_black">#333333</color>
+    <color name="light_black">#555555</color>
+    <color name="black">#666666</color>
+    <color name="deep_gray">#999999</color>
+    <color name="gray">#CCCCCC</color>
+    <color name="gray_light">#F5F5F5</color>
+    <color name="white_gray">#F8F8F8</color>
+    <color name="white">#FFFFFF</color>
+    <color name="fb_blue">#3B5998</color>
+    <color name="transparent">#00000000</color>
+    <color name="translucent_white">#BFFFFFFF</color>
+</resources>
