@@ -1,11 +1,14 @@
 package com.zuba.carsharing.application;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
+import com.zuba.carsharing.R;
+import com.zuba.carsharing.helper.ZubaHelper;
 import com.zuba.carsharing.model.Display;
 import com.zuba.carsharing.model.Record;
 
@@ -40,5 +43,19 @@ public class CarsharingApplication extends Application {
         display.width = mDisplayMetrics.widthPixels;
         display.height = mDisplayMetrics.heightPixels - mResources.getDimensionPixelSize(resourceId);
         return display;
+    }
+
+    /**
+     * 帶動畫關閉指定Context 的Activity
+     */
+    public static void exitActivity(Context context) {
+        if (context == null) {
+            return;
+        }
+        if (context instanceof Activity) {
+            ZubaHelper.hideKeyboard((Activity) context);
+            ((Activity) context).finish();
+            ((Activity) context).overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
+        }
     }
 }

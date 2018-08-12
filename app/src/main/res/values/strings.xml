@@ -3,4 +3,13 @@
     <string name="api_url">https://www.yotor.com.tw:9089/</string>
     <string name="app_name">Carsharing</string>
     <string name="aes_key">eufpsoicjhaz83id</string>
+
+    <string name="account_register">新戶註冊</string>
+    <string name="forget_password">忘記密碼</string>
+    <string name="facebook_login">Facebook 登入</string>
+    <string name="google_login">Google 登入</string>
+    <string name="login_description">A fantastic trip comes from\nencounter a fantastic</string>
+    <string name="login">登入</string>
+    <string name="please_enter_phone">輸入手機號碼</string>
+    <string name="please_enter_password">輸入密碼</string>
 </resources>
