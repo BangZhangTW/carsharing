@@ -1,4 +1,6 @@
 <resources>
+    <!--<string name="api_url">https://www.zuba.com.tw/</string>-->
+    <string name="api_url">https://www.yotor.com.tw:9089/</string>
     <string name="app_name">Carsharing</string>
     <string name="aes_key">eufpsoicjhaz83id</string>
 </resources>
