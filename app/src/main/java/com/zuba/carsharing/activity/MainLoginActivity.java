@@ -7,9 +7,10 @@ import android.widget.RelativeLayout;
 import com.zuba.carsharing.R;
 import com.zuba.carsharing.activity.base.BaseActivity;
 import com.zuba.carsharing.enum_package.ActivityTypeEnum;
+import com.zuba.carsharing.frame.layout.MainLoginLayout;
+import com.zuba.carsharing.helper.ZubaCacheHelper;
 import com.zuba.carsharing.util.ActivityNavigation;
 import com.zuba.carsharing.util.Util;
-import com.zuba.frame.layout.MainLoginLayout;
 
 import static android.view.View.GONE;
 
@@ -21,6 +22,7 @@ public class MainLoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login);
 
+        checkLogin();
         mToolbar.setVisibility(GONE);
 
         mMainLoginLayout = (MainLoginLayout) findViewById(R.id.main_login_layout);
@@ -33,6 +35,17 @@ public class MainLoginActivity extends BaseActivity {
             public void onClick(View view) {
                 if (Util.isEnableClick()) {
                     new ActivityNavigation().startActivity(mContext, ActivityTypeEnum.LOGIN);
+                    finish();
+                }
+            }
+        });
+
+        mMainLoginLayout.setAccountRegisterOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (Util.isEnableClick()) {
+                    new ActivityNavigation().startActivity(mContext, ActivityTypeEnum.REGISTER);
+                    finish();
                 }
             }
         });
@@ -54,6 +67,13 @@ public class MainLoginActivity extends BaseActivity {
 
         if (mMainLoginLayout != null) {
             mMainLoginLayout.recycle();
+        }
+    }
+
+    private void checkLogin() {
+        if (ZubaCacheHelper.getToken(mContext) != null) {
+            new ActivityNavigation().startActivity(mContext, ActivityTypeEnum.HOME);
+            finish();
         }
     }
 }

@@ -5,7 +5,8 @@ package com.zuba.carsharing.api.model;
  */
 
 public class ApiResult<T> {
-    public T items;
-    public int error_code = 0;
-    public String message = "";
+    public T ReturnData;
+    public String ReturnCode = "";
+    public String ErrorMessage = "";
+    public String ReturnTime = "";
 }

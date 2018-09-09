@@ -1,4 +1,4 @@
-package com.zuba.frame.layout;
+package com.zuba.carsharing.frame.layout;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -13,8 +13,8 @@ import com.zuba.carsharing.R;
 import com.zuba.carsharing.helper.ZubaHelper;
 import com.zuba.carsharing.model.Record;
 import com.zuba.carsharing.util.BitmapOptimize;
-import com.zuba.frame.view.RadiusIconView;
-import com.zuba.frame.view.ZubaRadiusEditView;
+import com.zuba.carsharing.frame.view.RadiusIconView;
+import com.zuba.carsharing.frame.view.ZubaRadiusEditView;
 
 public class LoginLayout extends RelativeLayout {
     private int mRadius = 4;
@@ -205,6 +205,18 @@ public class LoginLayout extends RelativeLayout {
         mGoogleRadiusIconView.setLayoutParams(layoutParams);
 
         this.addView(mGoogleRadiusIconView);
+    }
+
+    public String getPhoneNumber() {
+        return mPhoneEditView.getValue();
+    }
+
+    public String getPassword() {
+        return mPasswordEditView.getValue();
+    }
+
+    public void setLoginOnClickListener(OnClickListener listener) {
+        mLoginRadiusIconView.setOnClickListener(listener);
     }
 
     public void setForgetPasswordOnClickListener(OnClickListener listener) {

@@ -1,12 +1,17 @@
 package com.zuba.carsharing.helper;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Looper;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DimenRes;
 import android.support.annotation.StringRes;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.TypedValue;
 import android.view.View;
@@ -17,6 +22,13 @@ import com.zuba.carsharing.R;
 import com.zuba.carsharing.application.CarsharingApplication;
 
 import java.lang.ref.WeakReference;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
+
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -146,6 +158,53 @@ public class ZubaHelper {
             activity.getWindow().setSoftInputMode(
                     WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
             );
+        }
+    }
+
+    //取得目前時間
+    public static String getNowDate() {
+        Calendar calendar = Calendar.getInstance();
+        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(calendar.getTime());
+    }
+
+    /**
+     * 轉換RequestBody
+     *
+     * @param requestDataMap 參數
+     */
+    public static Map<String, RequestBody> generateRequestBody(Map<String, String> requestDataMap) {
+        Map<String, RequestBody> requestBodyMap = new HashMap<>();
+        for (String key : requestDataMap.keySet()) {
+            RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"),
+                    requestDataMap.get(key) == null ? "" : requestDataMap.get(key));
+            requestBodyMap.put(key, requestBody);
+        }
+        return requestBodyMap;
+    }
+
+    //取得裝置ID
+    public static String getDeviceID() {
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ? Build.getSerial() : Build.SERIAL;
+    }
+
+    //取得裝置Version
+    public static String getVersion(Context context) {
+        String version = "";
+        try {
+            PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+            version = packageInfo.versionName;
+        } catch (Exception e) {
+        }
+        return version;
+    }
+
+    //確認權限
+    public static boolean checkPermission(Context context, String manifestPermission) {
+        int permission = ActivityCompat.checkSelfPermission(context, manifestPermission);
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            return false;
+        } else {
+            return true;
         }
     }
 }

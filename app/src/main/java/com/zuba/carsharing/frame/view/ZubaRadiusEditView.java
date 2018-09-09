@@ -1,4 +1,4 @@
-package com.zuba.frame.view;
+package com.zuba.carsharing.frame.view;
 
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
