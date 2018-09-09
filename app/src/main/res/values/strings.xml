@@ -1,6 +1,29 @@
 <resources>
-    <!--<string name="api_url">https://www.zuba.com.tw/</string>-->
-    <string name="api_url">https://www.yotor.com.tw:9089/</string>
+    <!--<string name="api_url">https://www.zuba.com.tw/AppService/</string>-->
+    <string name="api_url">https://www.yotor.com.tw:9089/AppService/</string>
+    <string name="app_id">QHrklMZf</string>
     <string name="app_name">Carsharing</string>
     <string name="aes_key">eufpsoicjhaz83id</string>
+
+    <string name="account_register">新戶註冊</string>
+    <string name="agree_account_policy"><![CDATA[填選提交即表示同意<br><u>【用戶服務協議】</u>及<u>【平臺服務規則】</u>]]></string>
+    <string name="agree_read_phone_state">請允許管理通話權限，才能進行登入</string>
+    <string name="clear">清除</string>
+    <string name="forget_password">忘記密碼</string>
+    <string name="facebook_login">Facebook 登入</string>
+    <string name="google_login">Google 登入</string>
+    <string name="get_verify_code">獲取驗證碼</string>
+    <string name="login_description">A fantastic trip comes from\nencounter a fantastic</string>
+    <string name="login">登入</string>
+    <string name="please_enter_phone">輸入手機號碼</string>
+    <string name="please_enter_your_phone">請輸入您的手機號碼</string>
+    <string name="please_enter_password">輸入密碼</string>
+    <string name="please_enter_new_password">請輸入新密碼</string>
+    <string name="please_enter_new_password_again">請再次輸入新密碼</string>
+    <string name="please_enter_new_password_fail">請輸入相同的密碼</string>
+    <string name="please_enter_verify_code">請輸入驗證碼</string>
+    <string name="please_enter_invite_code">邀請手機號或是邀請碼</string>
+    <string name="please_input_correct_phone">請輸入正確的手機號碼</string>
+    <string name="register">註冊</string>
+    <string name="send">送出</string>
 </resources>
